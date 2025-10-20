@@ -3,25 +3,16 @@ package switchex;
 import java.util.Scanner;
 
 public class Ejercicio01 {
-
 	public static void main(String[] args) {
-		int nota;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduce tu nota: ");
-		nota = sc.nextInt();
+		System.out.print("Introduce tu nota (0-10): ");
+		int nota = sc.nextInt();
+
 		switch (nota) {
 		case 0:
-			System.out.println("Insuficiente");
-			break;
 		case 1:
-			System.out.println("Insuficiente");
-			break;
 		case 2:
-			System.out.println("Insuficiente");
-			break;
 		case 3:
-			System.out.println("Insuficiente");
-			break;
 		case 4:
 			System.out.println("Insuficiente");
 			break;
@@ -32,22 +23,17 @@ public class Ejercicio01 {
 			System.out.println("Bien");
 			break;
 		case 7:
-			System.out.println("Notable");
-			break;
 		case 8:
 			System.out.println("Notable");
 			break;
 		case 9:
-			System.out.println("Sobresaliente");
-			break;
 		case 10:
 			System.out.println("Sobresaliente");
+			break;
 		default:
 			System.out.println("La nota introducida no es correcta.");
 		}
 
 		sc.close();
-
 	}
-
 }
