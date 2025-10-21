@@ -3,6 +3,7 @@ package switchex;
 import java.util.Scanner;
 
 public class Ejercicio04 {
+	// QUITAR LOS RETURN
 	public static void main(String[] args) {
 		int num1 = 0;
 		int num2 = 0;

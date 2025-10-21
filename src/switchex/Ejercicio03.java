@@ -15,7 +15,7 @@ public class Ejercicio03 {
 		System.out.print("Introduce el número 2: ");
 		num2 = sc.nextInt();
 
-		System.out.println("\nMenú de Cálculo");
+		System.out.println("Menú de Cálculo");
 		System.out.println("A. Sumar los números");
 		System.out.println("B. Restar los números");
 		System.out.println("C. Multiplicar los números");
