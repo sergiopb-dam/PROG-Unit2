@@ -1,0 +1,56 @@
+package dowhile;
+
+import java.util.Scanner;
+
+public class Ejercicio06 {
+	public static void main(String[] args) {
+		
+		String jugada1;
+		String jugada2;
+		String seguir;
+		final String PIEDRA = "PIEDRA";
+		final String PAPEL = "PAPEL";
+		final String TIJERAS = "TIJERAS";
+
+		Scanner sc = new Scanner(System.in);
+
+		do {
+			// Validar jugada del jugador 1
+			do {
+				System.out.print("Jugada del jugador 1 (PIEDRA, PAPEL o TIJERAS): ");
+				jugada1 = sc.next().toUpperCase();
+				if (!jugada1.equals(PIEDRA) && !jugada1.equals(PAPEL) && !jugada1.equals(TIJERAS)) {
+					System.out.println("Jugada 1 errónea. Intenta de nuevo.");
+				}
+			} while (!jugada1.equals(PIEDRA) && !jugada1.equals(PAPEL) && !jugada1.equals(TIJERAS));
+
+			// Validar jugada del jugador 2
+			do {
+				System.out.print("Jugada del jugador 2 (PIEDRA, PAPEL o TIJERAS): ");
+				jugada2 = sc.next().toUpperCase();
+				if (!jugada2.equals(PIEDRA) && !jugada2.equals(PAPEL) && !jugada2.equals(TIJERAS)) {
+					System.out.println("Jugada 2 errónea. Intenta de nuevo.");
+				}
+			} while (!jugada2.equals(PIEDRA) && !jugada2.equals(PAPEL) && !jugada2.equals(TIJERAS));
+
+			// Resultado de la partida
+			if (jugada1.equals(jugada2)) {
+				System.out.println("¡Empate!");
+			} else if ((jugada1.equals(PIEDRA) && jugada2.equals(TIJERAS))
+					|| (jugada1.equals(PAPEL) && jugada2.equals(PIEDRA))
+					|| (jugada1.equals(TIJERAS) && jugada2.equals(PAPEL))) {
+				System.out.println("Gana el jugador 1");
+			} else {
+				System.out.println("Gana el jugador 2");
+			}
+
+			// Preguntar si se quiere seguir jugando
+			System.out.print("¿Quieres jugar otra vez? (S para sí, cualquier otra tecla para salir): ");
+			seguir = sc.next().toUpperCase();
+		} while (seguir.equals("S"));
+
+		System.out.println("Saliendo...");
+		
+		sc.close();
+	}
+}
