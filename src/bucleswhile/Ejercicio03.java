@@ -5,31 +5,31 @@ import java.util.Scanner;
 public class Ejercicio03 {
 	public static void main(String[] args) {
 
-		int numero;
-		int suma = 0;
+		// Creamos el scanner
+		Scanner reader = new Scanner(System.in);
+
+		// Declaramos las variables
+		int numero = 0;
 		int contador = 0;
-		
-		Scanner sc = new Scanner(System.in);
-		
-		while (true) {
-			System.out.print("Introduce un número entero positivo (o un número negativo para terminar): ");
-			numero = sc.nextInt();
 
-			if (numero < 0) {
-				break;
-			}
+		// Preguntamos al usuario el numero
+		System.out.println("Introduce un numero: ");
+		// Leemos por consola
+		numero = reader.nextInt();
 
-			suma += numero;
+		// Controlamos que mientras que el numero sea mayor que 0 siga sumando
+		while (numero >= 0) {
 			contador++;
+			// Pedimos un numero nuevo
+			System.out.println("Introduce otro numero");
+			// Leemos por consola
+			numero = reader.nextInt();
 		}
 
-		if (contador > 0) {
-			double media = (double) suma / contador;
-			System.out.println("La media de los números positivos es: " + media);
-		} else {
-			System.out.println("No se introdujeron números positivos.");
-		}
+		// Mostramos el resultado en caso de que se introduzca un numero menor
+		System.out.println("Numeros positivos introducidos: " + contador);
 
-		sc.close();
+		// Cerramos el scanner
+		reader.close();
 	}
 }

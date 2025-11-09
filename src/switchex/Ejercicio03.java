@@ -3,51 +3,70 @@ package switchex;
 import java.util.Scanner;
 
 public class Ejercicio03 {
-	public static void main(String[] args) {
-		int num1, num2, suma, resta, mult;
-		double div;
-		String opcion;
-		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Introduce el número 1: ");
-		num1 = sc.nextInt();
+    public static void main(String[] args) {
 
-		System.out.print("Introduce el número 2: ");
-		num2 = sc.nextInt();
+        // Variables para los números y resultados
+        int num1, num2, suma, resta, mult;
+        double div;
+        String opcion;
 
-		System.out.println("Menú de Cálculo");
-		System.out.println("A. Sumar los números");
-		System.out.println("B. Restar los números");
-		System.out.println("C. Multiplicar los números");
-		System.out.println("D. Dividir los números");
-		System.out.print("Introduce la letra de la opción a ejecutar: ");
-		opcion = sc.next().toUpperCase();
+        // Preparamos el Scanner para leer la entrada del usuario
+        Scanner sc = new Scanner(System.in);
 
-		switch (opcion) {
-		case "A":
-			suma = num1 + num2;
-			System.out.println("La suma de " + num1 + " + " + num2 + " es " + suma + ".");
-			break;
-		case "B":
-			resta = num1 - num2;
-			System.out.println("La resta de " + num1 + " - " + num2 + " es " + resta + ".");
-			break;
-		case "C":
-			mult = num1 * num2;
-			System.out.println("La multiplicación de " + num1 + " x " + num2 + " es " + mult + ".");
-			break;
-		case "D":
-			if (num2 == 0) {
-				System.out.println("Error: No se puede dividir por 0.");
-			} else {
-				div = (double) num1 / num2;
-				System.out.println("La división de " + num1 + " / " + num2 + " es " + div + ".");
-			}
-			break;
-		default:
-			System.out.println("Error. Opción inválida.");
-		}
+        // Pedimos los dos números al usuario
+        System.out.print("Introduce el número 1: ");
+        num1 = sc.nextInt();
 
-		sc.close();
-	}
+        System.out.print("Introduce el número 2: ");
+        num2 = sc.nextInt();
+
+        // Mostramos el menú de operaciones
+        System.out.println("Menú de Cálculo");
+        System.out.println("A. Sumar los números");
+        System.out.println("B. Restar los números");
+        System.out.println("C. Multiplicar los números");
+        System.out.println("D. Dividir los números");
+        System.out.print("Introduce la letra de la opción a ejecutar: ");
+        opcion = sc.next().toUpperCase(); // Convertimos a mayúscula para evitar errores
+
+        // Usamos un switch para decidir qué operación realizar
+        switch (opcion) {
+            case "A":
+                // Suma
+                suma = num1 + num2;
+                System.out.println("La suma de " + num1 + " + " + num2 + " es " + suma + ".");
+                break;
+
+            case "B":
+                // Resta
+                resta = num1 - num2;
+                System.out.println("La resta de " + num1 + " - " + num2 + " es " + resta + ".");
+                break;
+
+            case "C":
+                // Multiplicación
+                mult = num1 * num2;
+                System.out.println("La multiplicación de " + num1 + " x " + num2 + " es " + mult + ".");
+                break;
+
+            case "D":
+                // División con comprobación de divisor
+                if (num2 == 0) {
+                    System.out.println("Error: No se puede dividir por 0.");
+                } else {
+                    div = (double) num1 / num2; // Convertimos a double para obtener decimales
+                    System.out.println("La división de " + num1 + " / " + num2 + " es " + div + ".");
+                }
+                break;
+
+            default:
+                // Opción inválida
+                System.out.println("Error. Opción inválida.");
+                break;
+        }
+
+        // Cerramos el Scanner
+        sc.close();
+    }
 }
