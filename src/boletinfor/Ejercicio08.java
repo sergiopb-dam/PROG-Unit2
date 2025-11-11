@@ -22,13 +22,13 @@ public class Ejercicio08 {
 		// Si A es menor que B, mostramos los números de A hasta B
 		if (numA < numB) {
 			for (int contador = numA; contador <= numB; contador++) {
-				System.out.println(contador);
+				System.out.print(contador + " ");
 			}
 		}
 		// Si A es mayor que B, mostramos los números de B hasta A
 		else if (numA > numB) {
 			for (int contador = numB; contador <= numA; contador++) {
-				System.out.println(contador);
+				System.out.print(contador + " ");
 			}
 		}
 		// Si A y B son iguales, avisamos al usuario
