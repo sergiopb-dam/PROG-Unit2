@@ -13,21 +13,23 @@ public class Ejercicio08 {
 
 		// Pedimos el número A
 		System.out.print("Introduce el número A: ");
+		// Guardamos el número A
 		numA = sc.nextInt();
 
 		// Pedimos el número B
 		System.out.print("Introduce el número B: ");
+		// Guardamos el número B
 		numB = sc.nextInt();
 
 		// Si A es menor que B, mostramos los números de A hasta B
-		if (numA < numB) {
+		if (numA < numB) { // 2, 10
 			for (int contador = numA; contador <= numB; contador++) {
 				System.out.print(contador + " ");
 			}
 		}
 		// Si A es mayor que B, mostramos los números de B hasta A
-		else if (numA > numB) {
-			for (int contador = numB; contador <= numA; contador++) {
+		else if (numA > numB) { // 10, 2
+			for (int contador = numA; contador >= numB; contador--) {
 				System.out.print(contador + " ");
 			}
 		}
